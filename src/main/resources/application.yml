@@ -1,0 +1,43 @@
+spring:
+  application:
+    name: order-service
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://121.196.169.60:3306/raorao_book?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: rl18702327006
+    hikari:
+      maximum-pool-size: 30
+      minimum-idle: 10
+  redis:
+    host: 81.69.200.230
+    password: rl18702327006
+server:
+  port: 8096
+eureka:
+  client:
+    service-url:
+      defaultZone: http://121.196.169.60:10086/eureka
+    registry-fetch-interval-seconds: 5
+  instance:
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    mapUnderscoreToCamelCase: true # 开启驼峰命名转换法
+raorao:
+  jwt:
+    pubKeyPath: D:/raorao/rsa/rsa.pub # 公钥地址
+    cookieName: RaoRao_TOKEN #名称
+  worker:
+    workerId: 1
+    dataCenterId: 1
+  pay:
+    appId: wx8397f8696b538317
+    mchId: 1473426802
+    key: T6m9iK73b0kn9g5v426MKfHQH7X8rKwb
+    connectTimeoutMs: 5000
+    readTimeoutMs: 10000
+
+
